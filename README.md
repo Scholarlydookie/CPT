@@ -10,3 +10,5 @@ A  simple program thats meant to complete a multuide of tasks
 - reminders
 
 all made in java for, 2025 FMG CS CPT
+
+- also i need to implement the requirments such as, objects, array lists etc.
