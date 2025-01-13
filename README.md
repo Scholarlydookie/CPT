@@ -1,4 +1,4 @@
-#Text based, journaling program
+# Text based, journaling program
 
 A  simple program thats meant to complete a multuide of tasks
 
