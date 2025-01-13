@@ -13,10 +13,11 @@ public class JournalingProgram {
     }
 
     public static void main(String[] args) {
-        boolean running = true; // to exit the code
+        boolean running = true;
         initScanner();
 
         while (running) {
+            clearScreen();
             System.out.println("|----------------------------------|");
             System.out.println("|Welcome to the Journaling Program!|");
             System.out.println("|----------------------------------|");
@@ -34,15 +35,15 @@ public class JournalingProgram {
                 switch (pick) {
                     case 1:
                         clearScreen();
-                        Note.main(new String[]{});
+                        noteTaking();
                         break;
                     case 2:
                         clearScreen();
-                        Calendar.main(new String[]{});
+                        calendarOrganization();
                         break;
                     case 3:
                         clearScreen();
-                        Media.main(new String[]{});
+                        media();
                         break;
                     case 4:
                         running = false;
@@ -60,5 +61,20 @@ public class JournalingProgram {
                 input.next(); // Clear the invalid input
             }
         }
+    }
+
+    public static void noteTaking() {
+        // Note-taking logic
+        Note.main(new String[]{});
+    }
+
+    public static void calendarOrganization() {
+        // Calendar organization logic
+        Calendar.main(new String[]{});
+    }
+
+    public static void media() {
+        // Media logic
+        Media.main(new String[]{});
     }
 }
