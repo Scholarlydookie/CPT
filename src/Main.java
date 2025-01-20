@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -5,16 +6,19 @@ public class Main {
 
 public static Scanner input;
 public static void initScanner() {input = new Scanner(System.in);}
+//Just so i dont have to write scanner sometimes
 
 public static void clearScreen() {System.out.print("\033[H\033[2J");System.out.flush();}
+//Flush the terminal
 
-public static void wait(int ms){
-try{Thread.sleep(ms);}
-catch(InterruptedException ex){Thread.currentThread().interrupt();}}
+public static void wait(int ms){try{Thread.sleep(ms);} catch(InterruptedException ex){Thread.currentThread().interrupt();}} 
+//For fun wait time for "loading function"
 
+public static void GetBack() {System.out.print("|Input:                            |");String b = "\b".repeat(28);System.out.print(b);}
+//funny little thing that makes my input asthetically pleasing
 
 public static void main(String[] args) {
-    initScanner();
+    initScanner(); 
     boolean run = true;
     while (run) {
 
@@ -31,9 +35,7 @@ public static void main(String[] args) {
     System.out.println("|3. Media                          |");
     System.out.println("|4. Exit                           |");
     System.out.println("|----------------------------------|");
-    System.out.print("|Input:                            |");
-    String b = "\b".repeat(28);
-    System.out.print(b);
+    GetBack();
 
         if (input.hasNextInt()) {
             int pick = input.nextInt();
@@ -48,11 +50,13 @@ public static void main(String[] args) {
                         break;
                     case 3:
                         clearScreen();
-                        media();
+                        Media();
                         break;
                     case 4:
                         clearScreen();
-                        System.out.println("Exiting Program...");
+                        System.out.println("|----------------------------------|");
+                        System.out.println("|Exiting Program... Goodbye!       |");
+                        System.out.println("|----------------------------------|");
                         wait(1000);
                         System.exit(0);
                         break;
@@ -74,15 +78,15 @@ public static void main(String[] args) {
         Notes.main(new String[]{});
     }
 
-    public static void MainProgram(){
+    public static void Mainia(){
         Main.main(new String[]{});
     }
 
     public static void calendarOrganization() {
-        Calendar.main(new String[]{});
+        
     }
 
-    public static void media() {
+    public static void Media() {
         Media.main(new String[]{});
     }
 }
